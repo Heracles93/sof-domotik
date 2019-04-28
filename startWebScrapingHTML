@@ -1,0 +1,3 @@
+tmux new -s webScrapingHTML -d
+# tmux pipe-pane -o -t webScrapingHTML:0 'cat >> webScrapingHTML.log'
+tmux send-keys -t webScrapingHTML:0 'ipython -i webScrapingHTML.py --colors=NoColor' C-m
