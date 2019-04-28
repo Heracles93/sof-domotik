@@ -93,17 +93,10 @@ def getAllData(url: list):
                 switchList.append(getSwitchState(webserver, i))
                 time.sleep(1)
             except:
-                print(webserver + " URLError: <urlopen error [Errno 113] No route to host>")
-
-        # print(templistName + " " + str(tempList[::-1]))
-        # print(humListName + " " + str(humList[::-1]))
-        # print(switchListName + " " + str(switchList[::-1]))
+                sys.stdout.write("URLError : "+webserver+" No route to host !\n", msgLevel="error")
         allTempList.append((templistName, tempList[::-1]))
         allhumList.append((humListName, humList[::-1]))
         allswitchList.append((switchListName, switchList[::-1]))
-    # print(allTempList)
-    # print(allhumList)
-    # print(allswitchList)
     return allTempList, allhumList, allswitchList
         
 
@@ -112,11 +105,20 @@ def getAllDataInLoop(url: list = url, refresh : int = 60):
     """
     """
     while True:
-        allTempList, allhumList, allswitchList = getAllData(url)
-        print(allTempList)
-        print(allhumList)
-        print(allswitchList)        
+        allTempList, allHumList, allSwitchList = getAllData(url)
+        getData(allTempList)
+        getData(allHumList)
+        getData(allSwitchList) 
+        # print("\n")
         time.sleep(refresh)
+
+
+
+def getData(dataList):
+        for e in dataList:
+            print(e)
+
+
 
 
 # allTempList, allhumList, allswitchList = getAllData(url)
