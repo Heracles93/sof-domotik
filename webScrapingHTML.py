@@ -16,7 +16,7 @@ import time
 from logger.logger import printer as print
 sys.stdout = myLogger(name = __file__.split(".")[0]+".log")
 
-import createHTML
+# import createHTML
 
 def connectHTML(url: str):
     """
@@ -99,24 +99,56 @@ def getAllData(url: list):
         allswitchList.append((switchListName, switchList[::-1]))
     return allTempList, allhumList, allswitchList
         
+# def getData(dataList):
+#         for e in dataList:
+#             print(e)
 
 
+# -----------------------------
 def getAllDataInLoop(url: list = url, refresh : int = 60):
     """
     """
+    fileToOpen = "template_index.html"
+
     while True:
         allTempList, allHumList, allSwitchList = getAllData(url)
-        getData(allTempList)
-        getData(allHumList)
-        getData(allSwitchList) 
+        # getData(allTempList)
+        # getData(allHumList)
+        # getData(allSwitchList) 
         # print("\n")
+        # print(allTempList)
+        # print(allHumList)
+        # print(allSwitchList)
+
+
+        with open(fileToOpen) as fl:
+            SWITCHSTATELEDCACHETTE = str(allSwitchList[2][1][0])
+            DHT11TEMPCACHETTEHUMIDE = str(allTempList[2][1][0])
+            DHT11HUMCACHETTEHUMIDE = str(allHumList[2][1][0])
+            DHT11TEMPCACHETTECHAUDE = str(allTempList[2][1][1])
+            DHT11HUMCACHETTECHAUDE = str(allHumList[2][1][1])
+            DHT11TEMPSALON = str(allTempList[1][1][0])
+            DHT11HUMSALON = str(allHumList[1][1][0])
+            content = fl.read()
+            content = content.replace("SWITCHSTATELEDCACHETTE", SWITCHSTATELEDCACHETTE)
+            content = content.replace("DHT11TEMPCACHETTEHUMIDE", DHT11TEMPCACHETTEHUMIDE)
+            content = content.replace("DHT11HUMCACHETTEHUMIDE", DHT11HUMCACHETTEHUMIDE)
+            content = content.replace("DHT11TEMPCACHETTECHAUDE", DHT11TEMPCACHETTECHAUDE)
+            content = content.replace("DHT11HUMCACHETTECHAUDE", DHT11HUMCACHETTECHAUDE)
+            content = content.replace("DHT11TEMPSALON", DHT11TEMPSALON)
+            content = content.replace("DHT11HUMSALON", DHT11HUMSALON)
+            # print(content)
+
+        html = open("index.html", mode="w")
+        html.write(content)
+
+
+        # input("PRESS ENTER")
         time.sleep(refresh)
 
 
 
-def getData(dataList):
-        for e in dataList:
-            print(e)
+
 
 
 
@@ -124,5 +156,6 @@ def getData(dataList):
 # allTempList, allhumList, allswitchList = getAllData(url)
 
 # createHTML.getData(allTempList)
-
-getAllDataInLoop(refresh=0)
+if __name__ == "__main__":
+    getAllDataInLoop(refresh=1)
+    
