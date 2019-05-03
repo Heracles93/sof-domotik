@@ -1,3 +1,2 @@
 tmux new -s sof-domotikWebServer -d
-# tmux pipe-pane -o -t sof-domotikWebServer:0 'cat >> sof-domotikWebServer.log'
-tmux send-keys -t sof-domotikWebServer:0 'ipython -i sof-domotikWebServer.py --colors=NoColor' C-m
+tmux send-keys -t sof-domotikWebServer:0 'ipython -i sof-domotikWebServer.py -- no-banner --colors=NoColor' C-m
