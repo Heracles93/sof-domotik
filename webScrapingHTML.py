@@ -10,11 +10,12 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 url = ("http://192.168.1.40", "http://192.168.1.34", "http://192.168.1.48")
+url = ("http://192.168.1.34", "http://192.168.1.48")
 
 from logger.logger import myLogger, sys
 import time
 from logger.logger import printer as print
-sys.stdout = myLogger(name = __file__.split(".")[0]+".log")
+sys.stdout = myLogger(name = "log/"+__file__.split(".")[0]+".log")
 
 # import createHTML
 
@@ -122,13 +123,13 @@ def getAllDataInLoop(url: list = url, refresh : int = 60):
 
 
         with open(fileToOpen) as fl:
-            SWITCHSTATELEDCACHETTE = str(allSwitchList[2][1][0])
-            DHT11TEMPCACHETTEHUMIDE = str(allTempList[2][1][0])
-            DHT11HUMCACHETTEHUMIDE = str(allHumList[2][1][0])
-            DHT11TEMPCACHETTECHAUDE = str(allTempList[2][1][1])
-            DHT11HUMCACHETTECHAUDE = str(allHumList[2][1][1])
-            DHT11TEMPSALON = str(allTempList[1][1][0])
-            DHT11HUMSALON = str(allHumList[1][1][0])
+            SWITCHSTATELEDCACHETTE = str(allSwitchList[1][1][0])
+            DHT11TEMPCACHETTEHUMIDE = str(allTempList[1][1][0])
+            DHT11HUMCACHETTEHUMIDE = str(allHumList[1][1][0])
+            DHT11TEMPCACHETTECHAUDE = str(allTempList[1][1][1])
+            DHT11HUMCACHETTECHAUDE = str(allHumList[1][1][1])
+            DHT11TEMPSALON = str(allTempList[0][1][0])
+            DHT11HUMSALON = str(allHumList[0][1][0])
             content = fl.read()
             content = content.replace("SWITCHSTATELEDCACHETTE", SWITCHSTATELEDCACHETTE)
             content = content.replace("DHT11TEMPCACHETTEHUMIDE", DHT11TEMPCACHETTEHUMIDE)
