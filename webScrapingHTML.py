@@ -104,12 +104,19 @@ def getAllData(url: list):
 #         for e in dataList:
 #             print(e)
 
+def DHTreplace(content, old, new):
+    if new != "2147483647":
+        content = content.replace(old, new)
+    else:
+        content = content.replace(old, "971")
+    return content
+
 
 # -----------------------------
 def getAllDataInLoop(url: list = url, refresh : int = 60):
     """
     """
-    fileToOpen = "template_index.html"
+    fileToOpen = "index1.html"
 
     while True:
         allTempList, allHumList, allSwitchList = getAllData(url)
@@ -131,20 +138,21 @@ def getAllDataInLoop(url: list = url, refresh : int = 60):
             DHT11TEMPSALON = str(allTempList[0][1][0])
             DHT11HUMSALON = str(allHumList[0][1][0])
             content = fl.read()
+            content = content.replace("TIMESOF-DOMOTIK", time.ctime())
             content = content.replace("SWITCHSTATELEDCACHETTE", SWITCHSTATELEDCACHETTE)
-            content = content.replace("DHT11TEMPCACHETTEHUMIDE", DHT11TEMPCACHETTEHUMIDE)
-            content = content.replace("DHT11HUMCACHETTEHUMIDE", DHT11HUMCACHETTEHUMIDE)
-            content = content.replace("DHT11TEMPCACHETTECHAUDE", DHT11TEMPCACHETTECHAUDE)
-            content = content.replace("DHT11HUMCACHETTECHAUDE", DHT11HUMCACHETTECHAUDE)
-            content = content.replace("DHT11TEMPSALON", DHT11TEMPSALON)
-            content = content.replace("DHT11HUMSALON", DHT11HUMSALON)
+            content = DHTreplace(content, "DHT11TEMPCACHETTEHUMIDE", DHT11TEMPCACHETTEHUMIDE)
+            content = DHTreplace(content, "DHT11HUMCACHETTEHUMIDE", DHT11HUMCACHETTEHUMIDE)
+            content = DHTreplace(content, "DHT11TEMPCACHETTECHAUDE", DHT11TEMPCACHETTECHAUDE)
+            content = DHTreplace(content, "DHT11HUMCACHETTECHAUDE", DHT11HUMCACHETTECHAUDE)
+            content = DHTreplace(content, "DHT11TEMPSALON", DHT11TEMPSALON)
+            content = DHTreplace(content, "DHT11HUMSALON", DHT11HUMSALON)
             # print(content)
 
         html = open("index.html", mode="w")
         html.write(content)
 
 
-        # input("PRESS ENTER")
+        print("Content updated")
         time.sleep(refresh)
 
 
