@@ -446,8 +446,8 @@
                             <div class="col-md-12">
                                 <div class="overview-wrap">
                                     <h2 class="title-1">overview</h2>
-                                    <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                    <!-- <button class="au-btn au-btn-icon au-btn--blue">
+                                        <i class="zmdi zmdi-plus"></i>add item</button> -->
                                 </div>
                             </div>
                         </div>
@@ -457,11 +457,12 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-account-o"></i>
+                                                <!-- <i class="temperature"></i> -->
+                                                <!-- <img src="images/temperature.png" alt="temperature" style="width:128px;height:128px;">  -->
                                             </div>
                                             <div class="text">
                                                 <h2>23 °C</h2>
-                                                <span>Température</span>
+                                                <span>Température (S)</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -471,19 +472,97 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c1">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <!-- <i class="temperature"></i> -->
+                                                <!-- <img src="images/temperature.png" alt="temperature" style="width:128px;height:128px;">  -->
+                                            </div>
+                                            <div class="text">
+                                                <h2>23 °C</h2>
+                                                <span>Température (KCH)</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart1-KCH"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c1">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <!-- <i class="temperature"></i> -->
+                                                <!-- <img src="images/temperature.png" alt="temperature" style="width:128px;height:128px;">  -->
+                                            </div>
+                                            <div class="text">
+                                                <h2>29 °C</h2>
+                                                <span>Température (KCC)</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart1-KCC"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <!-- <img src="images/humidity.png" alt="temperature" style="width:128px;height:128px;"> -->
                                             </div>
                                             <div class="text">
                                                 <h2>30 %</h2>
-                                                <span>Humidité</span>
+                                                <span>Humidité (S)</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart2"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                      
+                            
+                            
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c2">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <!-- <img src="images/humidity.png" alt="temperature" style="width:128px;height:128px;"> -->
+                                            </div>
+                                            <div class="text">
+                                                <h2>60 %</h2>
+                                                <span>Humidité (KCH)</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart2-KCH"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c2">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <!-- <img src="images/humidity.png" alt="temperature" style="width:128px;height:128px;"> -->
+                                            </div>
+                                            <div class="text">
+                                                <h2>30 %</h2>
+                                                <span>Humidité (KCC)</span>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id="widgetChart2-KCC"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -493,11 +572,11 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-calendar-note"></i>
+                                                <!-- <img src="images/light.png" alt="temperature" style="width:128px;height:128px;"> -->
                                             </div>
                                             <div class="text">
                                                 <h2>Allumé</h2>
-                                                <span>Led Terrarium</span>
+                                                <span>Led Terrarium (K)</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -506,12 +585,13 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-money"></i>
+                                                <!-- <img src="images/airQuality.png" alt="temperature" style="width:128px;height:128px;"> -->
                                             </div>
                                             <div class="text">
                                                 <h2>Test</h2>
@@ -525,6 +605,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="au-card recent-report">

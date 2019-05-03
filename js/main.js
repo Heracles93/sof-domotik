@@ -7,7 +7,7 @@
     //WidgetChart 1
     var ctx = document.getElementById("widgetChart1");
     if (ctx) {
-      ctx.height = 130;
+      ctx.height = 120;
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -68,12 +68,146 @@
         }
       });
     }
+    //WidgetChart 1
+    var ctx = document.getElementById("widgetChart1-KCH");
+    if (ctx) {
+      ctx.height = 120;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          type: 'line',
+          datasets: [{
+            data: [0, 10, 40, 90, 100, 0, 150],
+            label: 'Dataset',
+            backgroundColor: 'rgba(255,255,255,.1)',
+            borderColor: 'rgba(255,255,255,.55)',
+          },]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          layout: {
+            padding: {
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0
+            }
+          },
+          responsive: true,
+          scales: {
+            xAxes: [{
+              gridLines: {
+                color: 'transparent',
+                zeroLineColor: 'transparent'
+              },
+              ticks: {
+                fontSize: 2,
+                fontColor: 'transparent'
+              }
+            }],
+            yAxes: [{
+              display: false,
+              ticks: {
+                display: false,
+              }
+            }]
+          },
+          title: {
+            display: false,
+          },
+          elements: {
+            line: {
+              borderWidth: 0
+            },
+            point: {
+              radius: 0,
+              hitRadius: 10,
+              hoverRadius: 4
+            }
+          }
+        }
+      });
+    }
 
+
+    //WidgetChart 1
+    var ctx = document.getElementById("widgetChart1-KCC");
+    if (ctx) {
+      ctx.height = 120;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['April', 'May', 'June', 'July'],
+          type: 'line',
+          datasets: [{
+            data: [42, 525, 7, 44],
+            label: 'Dataset',
+            backgroundColor: 'rgba(255,255,255,.1)',
+            borderColor: 'rgba(255,255,255,.55)',
+          },]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          layout: {
+            padding: {
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0
+            }
+          },
+          responsive: true,
+          scales: {
+            xAxes: [{
+              gridLines: {
+                color: 'transparent',
+                zeroLineColor: 'transparent'
+              },
+              ticks: {
+                fontSize: 2,
+                fontColor: 'transparent'
+              }
+            }],
+            yAxes: [{
+              display: false,
+              ticks: {
+                display: false,
+              }
+            }]
+          },
+          title: {
+            display: false,
+          },
+          elements: {
+            line: {
+              borderWidth: 0
+            },
+            point: {
+              radius: 0,
+              hitRadius: 10,
+              hoverRadius: 4
+            }
+          }
+        }
+      });
+    }
+
+
+
+
+    
 
     //WidgetChart 2
     var ctx = document.getElementById("widgetChart2");
     if (ctx) {
-      ctx.height = 130;
+      ctx.height = 120;
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -140,18 +274,158 @@
       });
     }
 
-
-    //WidgetChart 3
-    var ctx = document.getElementById("widgetChart3");
+    //WidgetChart 2
+    var ctx = document.getElementById("widgetChart2-KCH");
     if (ctx) {
-      ctx.height = 130;
+      ctx.height = 120;
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June'],
           type: 'line',
           datasets: [{
-            data: [65, 59, 84, 84, 51, 55],
+            data: [41, 95, 29, 3, 27, 81],
+            label: 'Dataset',
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(255,255,255,.55)',
+          },]
+        },
+        options: {
+
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          responsive: true,
+          tooltips: {
+            mode: 'index',
+            titleFontSize: 12,
+            titleFontColor: '#000',
+            bodyFontColor: '#000',
+            backgroundColor: '#fff',
+            titleFontFamily: 'Montserrat',
+            bodyFontFamily: 'Montserrat',
+            cornerRadius: 3,
+            intersect: false,
+          },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                color: 'transparent',
+                zeroLineColor: 'transparent'
+              },
+              ticks: {
+                fontSize: 2,
+                fontColor: 'transparent'
+              }
+            }],
+            yAxes: [{
+              display: false,
+              ticks: {
+                display: false,
+              }
+            }]
+          },
+          title: {
+            display: false,
+          },
+          elements: {
+            line: {
+              tension: 0.00001,
+              borderWidth: 1
+            },
+            point: {
+              radius: 4,
+              hitRadius: 10,
+              hoverRadius: 4
+            }
+          }
+        }
+      });
+    }
+
+    //WidgetChart 2
+    var ctx = document.getElementById("widgetChart2-KCC");
+    if (ctx) {
+      ctx.height = 120;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          type: 'line',
+          datasets: [{
+            data: [55, 57, 72, 62, 14, 41],
+            label: 'Dataset',
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(255,255,255,.55)',
+          },]
+        },
+        options: {
+
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          responsive: true,
+          tooltips: {
+            mode: 'index',
+            titleFontSize: 12,
+            titleFontColor: '#000',
+            bodyFontColor: '#000',
+            backgroundColor: '#fff',
+            titleFontFamily: 'Montserrat',
+            bodyFontFamily: 'Montserrat',
+            cornerRadius: 3,
+            intersect: false,
+          },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                color: 'transparent',
+                zeroLineColor: 'transparent'
+              },
+              ticks: {
+                fontSize: 2,
+                fontColor: 'transparent'
+              }
+            }],
+            yAxes: [{
+              display: false,
+              ticks: {
+                display: false,
+              }
+            }]
+          },
+          title: {
+            display: false,
+          },
+          elements: {
+            line: {
+              tension: 0.00001,
+              borderWidth: 1
+            },
+            point: {
+              radius: 4,
+              hitRadius: 10,
+              hoverRadius: 4
+            }
+          }
+        }
+      });
+    }
+
+
+    //WidgetChart 3
+    var ctx = document.getElementById("widgetChart3");
+    if (ctx) {
+      ctx.height = 120;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          type: 'line',
+          datasets: [{
+            data: [0, 1, 1, 1, 0, 1],
             label: 'Dataset',
             backgroundColor: 'transparent',
             borderColor: 'rgba(255,255,255,.55)',
@@ -214,7 +488,7 @@
     //WidgetChart 4
     var ctx = document.getElementById("widgetChart4");
     if (ctx) {
-      ctx.height = 115;
+      ctx.height = 105;
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -222,7 +496,7 @@
           datasets: [
             {
               label: "My First dataset",
-              data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+              data: [0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "rgba(255,255,255,.3)"
@@ -258,7 +532,7 @@
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
-      ctx.height = 250;
+      ctx.height = 300;
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
