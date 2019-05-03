@@ -80,7 +80,7 @@
           labels: ['January', 'February', 'March', 'April', 'May', 'June'],
           type: 'line',
           datasets: [{
-            data: [1, 18, 9, 17, 34, 22],
+            data: [100, 18, 9, 17, 34, 22],
             label: 'Dataset',
             backgroundColor: 'transparent',
             borderColor: 'rgba(255,255,255,.55)',
