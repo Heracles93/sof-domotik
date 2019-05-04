@@ -116,7 +116,7 @@ def DHTreplace(content, old, new):
 def getAllDataInLoop(url: list = url, refresh : int = 60):
     """
     """
-    fileToOpen = "index1.html"
+    fileToOpen = "template_index.html"
 
     while True:
         allTempList, allHumList, allSwitchList = getAllData(url)
@@ -135,8 +135,10 @@ def getAllDataInLoop(url: list = url, refresh : int = 60):
             DHT11HUMCACHETTEHUMIDE = str(allHumList[1][1][0])
             DHT11TEMPCACHETTECHAUDE = str(allTempList[1][1][1])
             DHT11HUMCACHETTECHAUDE = str(allHumList[1][1][1])
-            DHT11TEMPSALON = str(allTempList[0][1][0])
-            DHT11HUMSALON = str(allHumList[0][1][0])
+            DHT11TEMPSALON1 = str(allTempList[0][1][0])
+            DHT11HUMSALON1 = str(allHumList[0][1][0])
+            DHT11TEMPSALON2 = str(allTempList[0][1][1])
+            DHT11HUMSALON2 = str(allHumList[0][1][1])
             content = fl.read()
             content = content.replace("TIMESOF-DOMOTIK", time.ctime())
             content = content.replace("SWITCHSTATELEDCACHETTE", SWITCHSTATELEDCACHETTE)
@@ -144,8 +146,10 @@ def getAllDataInLoop(url: list = url, refresh : int = 60):
             content = DHTreplace(content, "DHT11HUMCACHETTEHUMIDE", DHT11HUMCACHETTEHUMIDE)
             content = DHTreplace(content, "DHT11TEMPCACHETTECHAUDE", DHT11TEMPCACHETTECHAUDE)
             content = DHTreplace(content, "DHT11HUMCACHETTECHAUDE", DHT11HUMCACHETTECHAUDE)
-            content = DHTreplace(content, "DHT11TEMPSALON", DHT11TEMPSALON)
-            content = DHTreplace(content, "DHT11HUMSALON", DHT11HUMSALON)
+            content = DHTreplace(content, "DHT11TEMPSALON1", DHT11TEMPSALON1)
+            content = DHTreplace(content, "DHT11HUMSALON1", DHT11HUMSALON1)
+            content = DHTreplace(content, "DHT11TEMPSALON2", DHT11TEMPSALON2)
+            content = DHTreplace(content, "DHT11HUMSALON2", DHT11HUMSALON2)
             # print(content)
 
         html = open("index.html", mode="w")
