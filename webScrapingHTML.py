@@ -117,6 +117,7 @@ def getAllDataInLoop(url: list = url, refresh : int = 60):
     """
     """
     fileToOpen = "template_index.html"
+    fileToOpen = "index1.html"
 
     while True:
         allTempList, allHumList, allSwitchList = getAllData(url)
